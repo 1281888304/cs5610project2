@@ -1,0 +1,20 @@
+#singleBoard{
+    height: 30px;
+    width: 30px;
+}
+.blue{
+    background-color: lightblue;
+    border: 1px solid gray;
+}
+
+.mark{
+    /* background-image: url('./images/check.png'); */
+    background-color: lightgreen;
+    border: 1px solid gray;
+}
+
+.cross{
+    /* background-image: url('./images/cross.png'); */
+    background-color: red;
+    border: 1px solid gray;
+}

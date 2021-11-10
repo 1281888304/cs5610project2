@@ -9,12 +9,18 @@
 
 .mark{
     /* background-image: url('./images/check.png'); */
-    background-color: lightgreen;
+    /* 要换成中间有个黑点，我不太会 */
+    background-color: yellow;
     border: 1px solid gray;
 }
 
 .cross{
     /* background-image: url('./images/cross.png'); */
     background-color: red;
+    border: 1px solid gray;
+}
+.el{
+    /* 要换成中间有个check，我不太会 */
+    background-color: green;
     border: 1px solid gray;
 }

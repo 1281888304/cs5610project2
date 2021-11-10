@@ -5,4 +5,4 @@ http://localhost:3000/gameBoard/free 就会只出现user自己的
 
 我用的方法是就和上周无关，几乎全是上上周的办法，两个Squre一个是SingleBoard代表玩家的每一小个board，SingleEnemyBoard代表AI，然后两个style文档叫做SingleBoard。css老哥可能麻烦你稍微改一下这个css文档里面的css就把上面黄色改成中间一个黑点，下面绿色改成绿色的勾勾，红色改成叉叉。然后老师课堂里对应的Board。jsx就是我的BattleShipBoard。jsx
 
-目前做出来的是当你上面click一个，下面随机就会自动也跟着来一个（麻烦老哥做一下剩下的工作啦，就自动结束那些，还有稍微设计的好看点，我的太不好看了）
+目前做出来的是当你上面click一个，下面随机就会自动也跟着来一个（麻烦老哥做一下剩下的工作啦，，还有稍微设计的好看点，我的太不好看了）

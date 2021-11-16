@@ -3,6 +3,7 @@ import { SingleBoard } from "./SingleBoard";
 import { useParams } from 'react-router';
 import './board.css'
 import { SingleEnemyBoard } from "./singleEnemyBoard";
+import ResetButton from './ResetButton';
 
 function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -100,16 +101,22 @@ export default function BattleShipBoard(){
                 enemyBoardComponent.push((<SingleEnemyBoard symbol={enemyBoardState[i][j]} x={i} y={j} />))
             }
         }
-        return <div class="flexbox-container">
+        return <div>
+            <div class="flexbox-container">
             <div class="flexbox-container2">
                 <h2>BattleShip game</h2>
+                
                 <h2>User term</h2>
                 <div id="battleShipBlock" >{boardComponent}</div>
             </div>
             <div className="flexbox-container3">
                 <h2>Enemy terms</h2>
                 <div id="enemy">{enemyBoardComponent}</div>
+
             </div>
+        
+        </div>
+        <div id="button"><ResetButton text="Reset, pls"/></div>
         </div>
     }else if (gameType==="free"){
         for(let i=0;i<boardState.length;i++){
@@ -121,7 +128,7 @@ export default function BattleShipBoard(){
         return <div>
             <h2>User term</h2>
             <div id="battleShipBlock">{boardComponent}</div>
-            
+            <div id="button"><ResetButton text="Reset, pls"/></div>
         </div>
     }   
 }

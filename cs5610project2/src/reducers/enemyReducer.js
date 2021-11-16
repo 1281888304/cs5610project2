@@ -112,6 +112,9 @@ function createEnemyBoard(){
         }
         return [...state];
     }
+    if(action.type==='RESET'){
+        return createEnemyBoard()
+    }
     
 
     

@@ -100,11 +100,15 @@ export default function BattleShipBoard(){
                 enemyBoardComponent.push((<SingleEnemyBoard symbol={enemyBoardState[i][j]} x={i} y={j} />))
             }
         }
-        return <div>
-            <h2>User term</h2>
-            <div id="battleShipBlock">{boardComponent}</div>
-            <h2>Enemy terms</h2>
-            <div id="enemy">{enemyBoardComponent}</div>
+        return <div class="flexbox-container">
+            <div class="flexbox-container2">
+                <h2>User term</h2>
+                <div id="battleShipBlock" >{boardComponent}</div>
+            </div>
+            <div className="flexbox-container3">
+                <h2>Enemy terms</h2>
+                <div id="enemy">{enemyBoardComponent}</div>
+            </div>
         </div>
     }else if (gameType==="free"){
         for(let i=0;i<boardState.length;i++){

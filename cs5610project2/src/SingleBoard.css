@@ -5,33 +5,38 @@
     justify-content: center; /* align horizontal */
     align-items: center; /* align vertical */
 }
+
 .blue{
-    background-color: lightblue;
-    border: 1px solid gray;
+    transition: all .2s ease-in-out;
+    opacity: 0.8;
+    background-color: #80cbc4;
 }
+
+.blue:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
 
 .mark{
     /* background-image: url('./images/check.png'); */
     /* 要换成中间有个黑点，我不太会 */
-    background-color: yellow;
-    border: 1px solid gray;
+    background-color: #e6ee9c;
 }
 
 .cross{
     /* background-image: url('./images/cross.png'); */
-    background-color: red;
-    border: 1px solid gray;
+    background-color: #e57373;
 }
 .el{
     /* 要换成中间有个check，我不太会 */
-    background-color: green;
-    border: 1px solid gray;
+    background-color: #aed581;
 }
 
 .dot {
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
+    height: 15px;
+    width: 15px;
+    background-color: #f8ffd7;
     border-radius: 50%;
     display: inline-block;
 }

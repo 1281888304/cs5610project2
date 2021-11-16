@@ -109,5 +109,8 @@ export default function gameReducer(state,action){
 
         return [...state];
     }
+    if(action.type==='RESET'){
+        return generateGameBoard()
+    }
     return state;
 }

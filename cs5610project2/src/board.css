@@ -24,55 +24,119 @@ body {
     100%{background-position:0% 50%}
 }
 
-.flexbox-container {
-    height: 100%;
-    margin: 0;
-    padding: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media only screen and (max-width: 768px) {
+    .flexbox-container {
+        height: 100%;
+        margin: 0;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .flexbox-container2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flexbox-container3 {
+        padding-top: 70px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    #battleShipBlock {
+        display: grid;
+        grid-template-columns: repeat(10, 40px);
+        grid-template-rows: repeat(10, 40px);
+        grid-column-gap: 10px;
+    }
+
+    #enemy {
+        display: grid;
+        grid-template-columns: repeat(10, 40px);
+        grid-template-rows: repeat(10, 40px);
+        grid-column-gap: 10px;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+
+    }
+
+    .resetButton {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
 }
 
-.flexbox-container2 {
-    display: flex;
-    flex-direction: column;
-}
+@media only screen and (min-width: 768px) {
+    .flexbox-container {
+        height: 100%;
+        margin: 0;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.flexbox-container3 {
-    padding-top: 70px;
-    display: flex;
-    flex-direction: column;
-    padding-left: 150px;
-}
+    .flexbox-container2 {
+        display: flex;
+        flex-direction: column;
+    }
 
-#battleShipBlock{
-    display: grid;
-    grid-template-columns: repeat(10,40px);
-    grid-template-rows: repeat(10,40px);
-    grid-column-gap: 10px;
-}
-#enemy{
-    display: grid;
-    grid-template-columns: repeat(10,40px);
-    grid-template-rows: repeat(10,40px);
-    grid-column-gap: 10px;
-}
-#button{
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  
-}
-.resetButton{
-    background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+    .flexbox-container3 {
+        padding-top: 70px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 150px;
+    }
+
+    #battleShipBlock {
+        display: grid;
+        grid-template-columns: repeat(10, 40px);
+        grid-template-rows: repeat(10, 40px);
+        grid-column-gap: 10px;
+    }
+
+    #enemy {
+        display: grid;
+        grid-template-columns: repeat(10, 40px);
+        grid-template-rows: repeat(10, 40px);
+        grid-column-gap: 10px;
+    }
+
+    #button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+
+    }
+
+    .resetButton {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
 }

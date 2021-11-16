@@ -102,6 +102,7 @@ export default function BattleShipBoard(){
         }
         return <div class="flexbox-container">
             <div class="flexbox-container2">
+                <h2>BattleShip game</h2>
                 <h2>User term</h2>
                 <div id="battleShipBlock" >{boardComponent}</div>
             </div>

@@ -11,7 +11,7 @@ import WelcomePage from './WelcomePage';
 const store=createStore(reducers);
 ReactDOM.render(
   <Provider store={store}>
-    <h2>BattleShip game</h2>
+    {/*<h2>BattleShip game</h2>*/}
     <Router>
       <Routes>
       <Route path="/gameBoard/:gameType" element={<BattleShipBoard />} />

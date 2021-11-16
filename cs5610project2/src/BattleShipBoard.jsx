@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import './board.css'
 import { SingleEnemyBoard } from "./singleEnemyBoard";
 import ResetButton from './ResetButton';
+import MyAlert from "./MyAlert";
 
 function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -72,29 +73,20 @@ function initShips(boardState, shipLength) {
 
 
 export default function BattleShipBoard(){
-    const boardState=useSelector((state)=> state.game) //user board state
+    const state=useSelector((state)=> state.game) //user board state
     const boardComponent=[];//uer board
+    const boardState = state['board']
 
     const enemyBoardState=useSelector((state)=>state.enemyGame)
     const enemyBoardComponent=[];//user board
     const gameType = useParams().gameType;
     if(gameType==="normal"){
-        // initShips(boardState, 5);
-        // initShips(boardState, 4);
-        // initShips(boardState, 3);
-        // initShips(boardState, 3);
-        // initShips(boardState, 2);
         for(let i=0;i<boardState.length;i++){
             let row=boardState[i];
             for(let j=0;j<row.length;j++){
-                boardComponent.push((<SingleBoard symbol={boardState[i][j]} x={i} y={j} />))
+                boardComponent.push((<SingleBoard symbol={boardState[i][j]} x={i} y={j} counter={state['counter']}/>))
             }
         }
-        // initShips(enemyBoardState, 5);
-        // initShips(enemyBoardState, 4);
-        // initShips(enemyBoardState, 3);
-        // initShips(enemyBoardState, 3);
-        // initShips(enemyBoardState, 2);
         for(let i=0;i<enemyBoardState.length;i++){
             let row=enemyBoardState[i];
             for(let j=0;j<row.length;j++){
@@ -116,6 +108,7 @@ export default function BattleShipBoard(){
             </div>
         
         </div>
+            {/*<div id="b"><MyAlert show={true} /></div>*/}
         <div id="button"><ResetButton text="Reset, pls"/></div>
         </div>
     }else if (gameType==="free"){

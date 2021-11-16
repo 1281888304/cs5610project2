@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import './SingleBoard.css'
+import MyAlert from "./MyAlert";
 
 export function SingleBoard(props){
     const symbol=props.symbol;
@@ -19,7 +20,15 @@ export function SingleBoard(props){
 
     const dispatch=useDispatch();
     if (symbol === 'hit') {
-        return (<div onClick={() => dispatch(
+        console.log(props.counter);
+
+        if (props.counter === 0) {
+            return (
+                <div id="b"><MyAlert message = "Player wins!" /></div>);
+        }
+
+        return (
+            <div onClick={() => dispatch(
             {
                 type: 'boardClick',
                 x: props.x,

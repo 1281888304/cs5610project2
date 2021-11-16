@@ -12,8 +12,6 @@ export default function ResetButton(props) {
             () => dispatch({
                 type: "RESET",
             })
-
-
         }>
             {text}
         </button>

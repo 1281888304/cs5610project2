@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
+import Popup from 'react-popup';
 import './index.css';
 import reducers from './reducers/reducers';
 import { Provider } from 'react-redux';
@@ -23,6 +24,7 @@ ReactDOM.render(
       </Routes>
     </Router>
     </Provider>,
+
   document.getElementById('root')
 );
 

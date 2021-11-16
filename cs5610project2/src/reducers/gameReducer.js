@@ -1,4 +1,6 @@
-
+import React, {useState} from "react";
+import {Button, Modal} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 function randomIntFromInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
@@ -62,8 +64,9 @@ function initShips(boardState, shipLength) {
         }
     }
 }
+
 function generateGameBoard(){
-    const defaultState=[
+    const defaultState= {board: [
         ['','','','','','','','','',''],
         ['','','','','','','','','',''],
         ['','','','','','','','','',''],
@@ -73,41 +76,34 @@ function generateGameBoard(){
         ['','','','','','','','','',''],
         ['','','','','','','','','',''],
         ['','','','','','','','','',''],
-        ['','','','','','','','','',''],
-    ];
-    
-    // for(let i=0;i<5;i++){
-    //     const row=randomIntFromInterval(0,9);
-    //     const col=randomIntFromInterval(0,9);
-    //     if(defaultState[row][col]===''){
-    //         defaultState[row][col]='bad';
-    //     }else{
-    //         i--;
-    //     }
-    // }
-    initShips(defaultState, 5);
-    initShips(defaultState, 4);
-    initShips(defaultState, 3);
-    initShips(defaultState, 3);
-    initShips(defaultState, 2);
+        ['','','','','','','','','','']
+    ], counter: 17}
+
+
+    initShips(defaultState['board'], 5);
+    initShips(defaultState['board'], 4);
+    initShips(defaultState['board'], 3);
+    initShips(defaultState['board'], 3);
+    initShips(defaultState['board'], 2);
     
     return defaultState;
 }
 
 export default function gameReducer(state,action){
+
     if(state===undefined){
         return generateGameBoard()
     }
     if (action.type === 'boardClick') {
-        const value = state[action.x][action.y];
+        const value = state['board'][action.x][action.y];
         if (value === '') {
-            state[action.x][action.y] = 'ul';
+            state['board'][action.x][action.y] = 'ul';
         } else if(value==='bad'){
-            state[action.x][action.y] = 'hit';
+            state['board'][action.x][action.y] = 'hit';
+            state['counter']--;
         }
-        // check winning condition
 
-        return [...state];
+        return state;
     }
     if(action.type==='RESET'){
         return generateGameBoard()

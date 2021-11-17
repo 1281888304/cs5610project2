@@ -78,15 +78,7 @@ function createEnemyBoard(){
         ['0','0','0','0','0','0','0','0','0','0'],
         ['0','0','0','0','0','0','0','0','0','0'],
     ];
-    // for(let i=0;i<5;i++){
-    //     const row=randomIntFromInterval(0,9);
-    //     const col=randomIntFromInterval(0,9);
-    //     if(defaultState[row][col]==='0'){
-    //         defaultState[row][col]='bad';
-    //     }else{
-    //         i--;
-    //     }
-    // }
+
     initShips(defaultState, 5);
     initShips(defaultState, 4);
     initShips(defaultState, 3);
@@ -102,9 +94,16 @@ function createEnemyBoard(){
     }
     if (action.type === 'boardClick'){
         //random make one change state
-        const row=randomIntFromInterval(0,9);
-        const col=randomIntFromInterval(0,9);
-        const value = state[row][col];
+        let row=randomIntFromInterval(0,9);
+        let col=randomIntFromInterval(0,9);
+        let value = state[row][col];
+
+        while (value !== 'bad' && value !== '0') {
+            row=randomIntFromInterval(0,9);
+            col=randomIntFromInterval(0,9);
+            value = state[row][col];
+        }
+
         if (value === '0') {
             state[row][col] = 'el';
         } else if(value==='bad'){

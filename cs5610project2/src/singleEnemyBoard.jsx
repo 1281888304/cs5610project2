@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import './SingleBoard.css'
+import MyAlert from "./MyAlert";
 
 export function SingleEnemyBoard(props){
     const symbol=props.symbol;
-
     let blockStyle='blue';
     if(symbol==='0' || symbol === 'bad'){
         blockStyle='blue';
@@ -16,29 +16,28 @@ export function SingleEnemyBoard(props){
         blockStyle='cross';
     }
 
-    const dispatch=useDispatch();
     if (symbol === 'bad') {
-        return (<div id="singleBoard" class={blockStyle}>
+        return (<div id="singleBoard" className={blockStyle}>
             {}
-            <div id={"dot"} class ={"dot"}>
+            <div id={"dot"} className ={"dot"}>
 
             </div>
         </div>)
     }
 
     if (symbol === 'hit') {
-        return (<div id="singleBoard" class={blockStyle}>
+        return (<div id="singleBoard" className={blockStyle}>
             {"X"}
         </div>)
     }
 
     if (symbol === 'el') {
-        return (<div id="singleBoard" class={blockStyle}>
+        return (<div id="singleBoard" className={blockStyle}>
             {"X"}
         </div>)
     }
 
-    return (<div id="singleBoard" class={blockStyle}>
+    return (<div id="singleBoard" className={blockStyle}>
         {}
     </div>);
 

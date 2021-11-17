@@ -20,7 +20,6 @@ export function SingleBoard(props){
 
     const dispatch=useDispatch();
     if (symbol === 'hit') {
-        console.log(props.counter);
 
         if (props.counter === 0) {
             return (
@@ -34,7 +33,7 @@ export function SingleBoard(props){
                 x: props.x,
                 y: props.y,
             }
-        )} id="singleBoard" class={blockStyle}>
+        )} id="singleBoard" className={blockStyle}>
             {"\u{2713}"}
         </div>);
     }
@@ -46,7 +45,7 @@ export function SingleBoard(props){
                 x: props.x,
                 y: props.y,
             }
-        )} id="singleBoard" class={blockStyle}>
+        )} id="singleBoard" className={blockStyle}>
             {"X"}
         </div>);
     }
@@ -58,7 +57,7 @@ export function SingleBoard(props){
                 x: props.x,
                 y: props.y,
             }
-        )} id="singleBoard" class={blockStyle}>
+        )} id="singleBoard" className={blockStyle}>
             {}
             <div id={"dot"} className={"dot"}>
             </div>
@@ -71,7 +70,7 @@ export function SingleBoard(props){
             x: props.x,
             y: props.y,
         }
-    )} id="singleBoard" class={blockStyle}>
+    )} id="singleBoard" className={blockStyle}>
         {symbol}
     </div>);
 

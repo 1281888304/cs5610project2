@@ -80,6 +80,8 @@ export default function BattleShipBoard(){
     const enemyBoardState=useSelector((state)=>state.enemyGame)
     const enemyBoardComponent=[];//user board
     const gameType = useParams().gameType;
+    let counter = 0;
+
     if(gameType==="normal"){
         for(let i=0;i<boardState.length;i++){
             let row=boardState[i];
@@ -90,12 +92,18 @@ export default function BattleShipBoard(){
         for(let i=0;i<enemyBoardState.length;i++){
             let row=enemyBoardState[i];
             for(let j=0;j<row.length;j++){
+                if (enemyBoardState[i][j] === 'hit') {
+                    counter++;
+                    if (counter === 17) {
+                        return (<div id="b"><MyAlert message="Computer wins!"/></div>);
+                    }
+                }
                 enemyBoardComponent.push((<SingleEnemyBoard symbol={enemyBoardState[i][j]} x={i} y={j} />))
             }
         }
         return <div>
-            <div class="flexbox-container">
-            <div class="flexbox-container2">
+            <div className="flexbox-container">
+            <div className="flexbox-container2">
                 <h2>BattleShip game</h2>
                 
                 <h2>User term</h2>

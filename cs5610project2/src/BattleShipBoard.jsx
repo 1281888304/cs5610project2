@@ -4,6 +4,7 @@ import { useParams } from 'react-router';
 import './board.css'
 import { SingleEnemyBoard } from "./singleEnemyBoard";
 import ResetButton from './ResetButton';
+import 'bootstrap/dist/css/bootstrap.css'
 
 function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);

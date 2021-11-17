@@ -89,7 +89,7 @@ export default function BattleShipBoard(){
         for(let i=0;i<boardState.length;i++){
             let row=boardState[i];
             for(let j=0;j<row.length;j++){
-                boardComponent.push((<SingleBoard symbol={boardState[i][j]} x={i} y={j} counter={state['counter']}/>))
+                boardComponent.push((<SingleBoard symbol={boardState[i][j]} x={i} y={j} counter={state['counter']} type = {'hide'}/>))
             }
         }
         for(let i=0;i<enemyBoardState.length;i++){
@@ -127,7 +127,7 @@ export default function BattleShipBoard(){
         for(let i=0;i<boardState.length;i++){
             let row=boardState[i];
             for(let j=0;j<row.length;j++){
-                boardComponent.push((<SingleBoard symbol={boardState[i][j]} x={i} y={j} counter={state['counter']}/>))
+                boardComponent.push((<SingleBoard symbol={boardState[i][j]} x={i} y={j} counter={state['counter']} type = {'hide'}/>))
             }
         }
         return <div>

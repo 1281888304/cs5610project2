@@ -4,6 +4,7 @@ import MyAlert from "./MyAlert";
 
 export function SingleBoard(props){
     const symbol=props.symbol;
+    const type = props.type;
 
     let blockStyle='blue';
     if(symbol==='' || symbol==='bad' || symbol==='0'){
@@ -51,6 +52,19 @@ export function SingleBoard(props){
     }
 
     if (symbol === 'bad') {
+
+        if (type === 'hide') {
+            return (<div onClick={() => dispatch(
+                {
+                    type: 'boardClick',
+                    x: props.x,
+                    y: props.y,
+                }
+            )} id="singleBoard" className={blockStyle}>
+                {}
+            </div>);
+        }
+
         return (<div onClick={() => dispatch(
             {
                 type: 'boardClick',
@@ -63,6 +77,7 @@ export function SingleBoard(props){
             </div>
         </div>);
     }
+
 
     return (<div onClick={() => dispatch(
         {

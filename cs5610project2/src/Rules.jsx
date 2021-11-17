@@ -1,7 +1,9 @@
 import './Rules.css'
 import 'bootstrap/dist/css/bootstrap.css'
+import MyNavBar from "./MyNavBar";
 export default function () {
     return <div>
+        <MyNavBar/>
         <div>
             <h1 style={{ textAlign: 'center' }}>Rules</h1>
         </div>

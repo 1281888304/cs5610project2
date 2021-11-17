@@ -5,6 +5,9 @@ import './board.css'
 import { SingleEnemyBoard } from "./singleEnemyBoard";
 import ResetButton from './ResetButton';
 import MyAlert from "./MyAlert";
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import MyNavBar from "./MyNavBar";
 
 function randomIntFromInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -95,13 +98,14 @@ export default function BattleShipBoard(){
                 if (enemyBoardState[i][j] === 'hit') {
                     counter++;
                     if (counter === 17) {
-                        return (<div id="b"><MyAlert message="Computer wins!"/></div>);
+                        return (<MyAlert message="Computer wins!"/>);
                     }
                 }
                 enemyBoardComponent.push((<SingleEnemyBoard symbol={enemyBoardState[i][j]} x={i} y={j} />))
             }
         }
         return <div>
+            <MyNavBar/>
             <div className="flexbox-container">
             <div className="flexbox-container2">
                 <h2>BattleShip game</h2>
@@ -123,13 +127,15 @@ export default function BattleShipBoard(){
         for(let i=0;i<boardState.length;i++){
             let row=boardState[i];
             for(let j=0;j<row.length;j++){
-                boardComponent.push((<SingleBoard symbol={boardState[i][j]} x={i} y={j} />))
+                boardComponent.push((<SingleBoard symbol={boardState[i][j]} x={i} y={j} counter={state['counter']}/>))
             }
         }
         return <div>
-            <h2>User term</h2>
-            <div id="battleShipBlock">{boardComponent}</div>
-            <div id="button"><ResetButton text="Reset, pls"/></div>
+            <MyNavBar/>
+            <div className="flexbox-container-free">
+                <div id="battleShipBlock">{boardComponent}</div>
+                <div id="button"><ResetButton text="Reset, pls"/></div>
+            </div>
         </div>
     }   
 }

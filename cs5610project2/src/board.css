@@ -35,6 +35,16 @@ body {
         flex-direction: column;
     }
 
+    .flexbox-container-free {
+        height: 100%;
+        margin: 0;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
     .flexbox-container2 {
         display: flex;
         flex-direction: column;
@@ -93,6 +103,16 @@ body {
         justify-content: center;
     }
 
+    .flexbox-container-free {
+        height: 100%;
+        margin: 0;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
     .flexbox-container2 {
         display: flex;
         flex-direction: column;
@@ -124,11 +144,10 @@ body {
         justify-content: center;
         align-items: center;
         height: 200px;
-
     }
 
     .resetButton {
-        background-color: #4CAF50; /* Green */
+        background-color: indianred;
         border: none;
         color: white;
         padding: 15px 32px;
@@ -138,5 +157,6 @@ body {
         font-size: 16px;
         margin: 4px 2px;
         cursor: pointer;
+        border-radius: 5%;
     }
 }
